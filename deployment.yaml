@@ -1,0 +1,6 @@
+version: '3'
+services:
+  #docker pull project application
+  App_Deployment :
+    image: iamkhaihoang/sample-app:1.0
+    container_name: devops16_container
