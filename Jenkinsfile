@@ -36,12 +36,12 @@ pipeline {
         }
 	stage("Deploy") {
             steps {
-        		sh """
-			        ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker system prune -f
-			        ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker rmi $IMAGE_NAME > /dev/null 2>&1
-			        ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker pull $IMAGE_NAME
-				#ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker run -it $IMAGE_NAME
-		        """
+        		
+				sh(' ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker system prune -f')
+				sh(' ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker rmi $IMAGE_NAME > /dev/null 2>&1')
+				sh(' ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker pull $IMAGE_NAME')
+				sh('#ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker run -it $IMAGE_NAME')
+		    
             }
         }
     }
