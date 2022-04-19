@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	environment {
-		IMAGE_TAG = "1.1"
+		IMAGE_TAG = "1.0"
 		DOCKERHUB_CREDENTIALS = credentials('iamkhaihoang-dockerhub')
 		GITHUB_REPO_NAME = "iamkhaihoang/devops16-app"
 		IMAGE_NAME = "${GITHUB_REPO_NAME}:${IMAGE_TAG}"
@@ -37,7 +37,6 @@ pipeline {
 	stage("Deploy") {
             steps {
         	sh """	
-			#ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker system prune -f
 			ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker rmi -f $IMAGE_NAME
 			ssh -o StrictHostKeyChecking=no $JENKINS_DEPLOYED_MACHINE docker pull $IMAGE_NAME			
 		"""    
