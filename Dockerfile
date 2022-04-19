@@ -1,4 +1,4 @@
-FROM java:8
+FROM java:11
 COPY . /home/app
 WORKDIR /home/app
 CMD ["java","project_app"]
