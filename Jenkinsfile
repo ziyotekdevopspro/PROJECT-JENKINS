@@ -3,7 +3,7 @@ pipeline {
 	environment {
 	 DOCKERHUB_CREDENTIALS = credentials('iamkhaihoang-dockerhub')
 	 GITHUB_REPO_NAME = "iamkhaihoang/devops16-app"
-	 IMAGE_TAG = "1.0" 
+	 IMAGE_TAG = "1.2" 
 	 IMAGE_NAME = "${GITHUB_REPO_NAME}:${IMAGE_TAG}"
 	 JENKINS_DEPLOYED_MACHINE = "192.168.37.111"
 	}
