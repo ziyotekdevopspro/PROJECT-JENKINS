@@ -9,7 +9,7 @@ public static void main(String[] args)
 		//reading a string from the user  
 		String lastname = System.console().readLine();  
 		String strhello = "Hello and welcome " +firstname + " " + lastname;
-        strhello = strhello + " to Ziyotek DEVOPS16 team.";
+        strhello = strhello + " to DEVOPS16 team.";
 		System.out.println(strhello);   
 	}   
 }  
