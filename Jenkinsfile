@@ -1,11 +1,7 @@
 pipeline {
     agent any
 	environment {
-<<<<<<< HEAD
 		IMAGE_TAG = "1.0"
-=======
-		IMAGE_TAG = "1.2"
->>>>>>> 9092a09a30110454c4028e10e74efce1193b5aaa
 		DOCKERHUB_CREDENTIALS = credentials('iamkhaihoang-dockerhub')
 		GITHUB_REPO_NAME = "iamkhaihoang/devops16-app"
 		IMAGE_NAME = "${GITHUB_REPO_NAME}:${IMAGE_TAG}"
