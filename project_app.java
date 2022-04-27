@@ -8,7 +8,7 @@ public static void main(String[] args)
 		System.out.print("Enter your lastname: ");   
 		//reading a string from the user  
 		String lastname = System.console().readLine();  
-		String strhello = "Hello and welcome " +firstname + " " + lastname;
+		String strhello = "Welcome " +firstname + " " + lastname;
         strhello = strhello + " to DEVOPS16 team.";
 		System.out.println(strhello);   
 	}   
